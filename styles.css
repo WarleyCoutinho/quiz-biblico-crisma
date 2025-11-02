@@ -683,3 +683,146 @@ body {
   outline: 2px solid var(--white);
   outline-offset: 2px;
 }
+
+/* =========================================
+   Estilos para questões de texto
+   ========================================= */
+
+/* Indicador do tipo de questão */
+.question-type-indicator {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Container para input de texto */
+.text-input-container {
+  width: 100%;
+  margin: 1.5rem 0;
+}
+
+/* Input de texto para respostas */
+.text-answer-input {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid var(--gray-300);
+  border-radius: 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: var(--white);
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.text-answer-input:focus {
+  outline: none;
+  border-color: var(--primary-purple);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+}
+
+.text-answer-input::placeholder {
+  color: var(--gray-600);
+}
+
+/* Estados do input */
+.text-answer-input.correct-answer {
+  border-color: var(--success-green);
+  background-color: var(--success-light);
+}
+
+.text-answer-input.incorrect-answer {
+  border-color: var(--error-red);
+  background-color: var(--error-light);
+}
+
+.text-answer-input[readonly] {
+  background-color: var(--gray-100);
+  cursor: not-allowed;
+}
+
+/* Botão de confirmar resposta de texto */
+.submit-text-button {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-button);
+}
+
+.submit-text-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.3);
+}
+
+.submit-text-button:disabled {
+  background: var(--gray-300);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Feedback para respostas de texto */
+.text-feedback {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-weight: 600;
+  animation: fadeIn 0.5s ease;
+}
+
+.text-feedback.correct {
+  background: var(--success-light);
+  color: var(--success-border);
+  border: 2px solid var(--success-border);
+}
+
+.text-feedback.incorrect {
+  background: var(--error-light);
+  color: var(--error-border);
+  border: 2px solid var(--error-border);
+}
+
+.correct-answer-display {
+  font-size: 0.875rem;
+  opacity: 0.8;
+  margin-top: 0.5rem;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+  .text-answer-input {
+    font-size: 16px; /* Previne zoom no iOS */
+  }
+  
+  .question-type-indicator {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+/* Animação para feedback */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

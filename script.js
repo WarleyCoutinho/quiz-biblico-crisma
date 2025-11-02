@@ -19,9 +19,12 @@ class CatequeseQuiz {
         this.totalQuestions = 20;
         this.pointsPerQuestion = 5;
         this.maxScore = 100;
+        this.currentQuestionType = 'multiple'; // 'multiple' ou 'text'
+        this.userTextAnswer = '';
         
         // Bind methods
         this.handleAnswer = this.handleAnswer.bind(this);
+        this.handleTextAnswer = this.handleTextAnswer.bind(this);
         this.initQuiz = this.initQuiz.bind(this);
         this.restart = this.restart.bind(this);
         
@@ -82,12 +85,14 @@ class CatequeseQuiz {
         this.score = 0;
         this.selectedAnswer = null;
         this.isAnswered = false;
+        this.userTextAnswer = '';
 
         // Embaralha as questões e seleciona as primeiras 20
         const shuffled = this.shuffleArray(this.questions).slice(0, this.totalQuestions);
-        this.shuffledQuestions = shuffled.map((q) => ({
+        this.shuffledQuestions = shuffled.map((q, index) => ({
             ...q,
-            shuffledOptions: this.shuffleOptionsWithCorrect(q.options, q.correctAnswer)
+            shuffledOptions: this.shuffleOptionsWithCorrect(q.options, q.correctAnswer),
+            questionType: index % 2 === 0 ? 'multiple' : 'text' // Alterna entre múltipla escolha e texto
         }));
 
         console.log('🎯 Quiz inicializado com', this.shuffledQuestions.length, 'questões');
@@ -100,12 +105,23 @@ class CatequeseQuiz {
     renderQuestion() {
         const currentQ = this.shuffledQuestions[this.currentQuestion];
         const progress = ((this.currentQuestion + 1) / this.shuffledQuestions.length) * 100;
+        this.currentQuestionType = currentQ.questionType;
 
         const html = this.createQuestionHTML(currentQ, progress);
         const appElement = document.getElementById("app");
         
         if (appElement) {
             appElement.innerHTML = html;
+            
+            // Se for questão de texto, foca no input
+            if (this.currentQuestionType === 'text') {
+                setTimeout(() => {
+                    const textInput = document.getElementById('text-answer-input');
+                    if (textInput) {
+                        textInput.focus();
+                    }
+                }, 100);
+            }
         } else {
             console.error('❌ Elemento #app não encontrado');
         }
@@ -154,14 +170,22 @@ class CatequeseQuiz {
      * Cria o conteúdo da questão
      */
     createContentHTML(currentQ) {
+        const questionTypeLabel = currentQ.questionType === 'multiple' ? 
+            '📋 Múltipla Escolha' : '✍️ Digite sua resposta';
+            
         return `
             <div class="quiz-content">
+                <div class="question-type-indicator">
+                    ${questionTypeLabel}
+                </div>
                 <h2 class="question-title">
                     ${currentQ.question}
                 </h2>
 
                 <div class="options-container">
-                    ${this.createOptionsHTML(currentQ)}
+                    ${currentQ.questionType === 'multiple' ? 
+                        this.createOptionsHTML(currentQ) : 
+                        this.createTextInputHTML(currentQ)}
                 </div>
 
                 <div class="info-box">
@@ -217,6 +241,58 @@ class CatequeseQuiz {
                 `;
             })
             .join("");
+    }
+
+    /**
+     * Cria o HTML para input de texto
+     */
+    createTextInputHTML(currentQ) {
+        const isAnswered = this.isAnswered;
+        const userAnswer = this.userTextAnswer;
+        const correctAnswer = currentQ.options[currentQ.correctAnswer];
+        
+        let inputClass = "text-answer-input";
+        let feedbackHTML = "";
+        let buttonDisabled = isAnswered ? 'disabled' : '';
+        
+        if (isAnswered) {
+            const isCorrect = this.checkTextAnswer(userAnswer, correctAnswer);
+            inputClass += isCorrect ? " correct-answer" : " incorrect-answer";
+            
+            feedbackHTML = `
+                <div class="text-feedback ${isCorrect ? 'correct' : 'incorrect'}">
+                    ${isCorrect ? 
+                        `${this.createIcon('check')} Correto!` : 
+                        `${this.createIcon('x')} Sua resposta: "${userAnswer}"`
+                    }
+                    <div class="correct-answer-display">
+                        💡 Resposta: ${correctAnswer}
+                    </div>
+                </div>
+            `;
+        }
+
+        return `
+            <div class="text-input-container">
+                <input 
+                    type="text" 
+                    id="text-answer-input"
+                    class="${inputClass}"
+                    placeholder="Digite sua resposta aqui..."
+                    value="${userAnswer}"
+                    ${isAnswered ? 'readonly' : ''}
+                    onkeypress="if(event.key==='Enter') quiz.handleTextAnswer()"
+                />
+                <button 
+                    class="submit-text-button"
+                    onclick="quiz.handleTextAnswer()"
+                    ${buttonDisabled}
+                >
+                    Confirmar Resposta
+                </button>
+                ${feedbackHTML}
+            </div>
+        `;
     }
 
     /**
@@ -286,6 +362,156 @@ class CatequeseQuiz {
     }
 
     /**
+     * Manipula a resposta de texto
+     */
+    handleTextAnswer() {
+        if (this.isAnswered) return;
+
+        const input = document.getElementById('text-answer-input');
+        if (!input || !input.value.trim()) {
+            alert('Por favor, digite uma resposta antes de confirmar.');
+            return;
+        }
+
+        this.userTextAnswer = input.value.trim();
+        this.isAnswered = true;
+
+        const currentQ = this.shuffledQuestions[this.currentQuestion];
+        const correctAnswer = currentQ.options[currentQ.correctAnswer];
+
+        // Verifica se a resposta está correta
+        if (this.checkTextAnswer(this.userTextAnswer, correctAnswer)) {
+            this.score += this.pointsPerQuestion;
+            console.log('✅ Resposta de texto correta! Pontuação:', this.score);
+        } else {
+            console.log('❌ Resposta de texto incorreta. Pontuação:', this.score);
+        }
+
+        // Re-renderiza para mostrar feedback
+        this.renderQuestion();
+
+        // Aguarda um tempo antes de avançar
+        setTimeout(() => {
+            this.nextQuestion();
+        }, 3000); // Mais tempo para ler o feedback
+    }
+
+    /**
+     * Verifica se a resposta de texto está correta
+     * Usa várias estratégias para considerar respostas similares
+     */
+    checkTextAnswer(userAnswer, correctAnswer) {
+        if (!userAnswer || !correctAnswer) return false;
+
+        // Normaliza as strings
+        const normalizeText = (text) => {
+            return text
+                .toLowerCase()
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '') // Remove acentos
+                .replace(/[^\w\s]/g, '') // Remove pontuação
+                .replace(/\s+/g, ' ') // Normaliza espaços
+                .trim();
+        };
+
+        const userNormalized = normalizeText(userAnswer);
+        const correctNormalized = normalizeText(correctAnswer);
+
+        // 1. Verificação exata
+        if (userNormalized === correctNormalized) {
+            return true;
+        }
+
+        // 2. Verifica se a resposta do usuário contém a resposta correta ou vice-versa
+        if (userNormalized.includes(correctNormalized) || correctNormalized.includes(userNormalized)) {
+            return true;
+        }
+
+        // 3. Verifica palavras-chave importantes
+        const userWords = userNormalized.split(' ').filter(word => word.length > 2);
+        const correctWords = correctNormalized.split(' ').filter(word => word.length > 2);
+        
+        if (correctWords.length > 0) {
+            const matchingWords = userWords.filter(word => 
+                correctWords.some(correctWord => 
+                    word.includes(correctWord) || correctWord.includes(word)
+                )
+            );
+            
+            // Se 70% das palavras importantes batem, considera correto
+            const matchPercentage = matchingWords.length / correctWords.length;
+            if (matchPercentage >= 0.7) {
+                return true;
+            }
+        }
+
+        // 4. Verificações específicas para números
+        const userNumbers = userAnswer.match(/\d+/g);
+        const correctNumbers = correctAnswer.match(/\d+/g);
+        
+        if (userNumbers && correctNumbers) {
+            const numbersMatch = userNumbers.some(num => correctNumbers.includes(num));
+            if (numbersMatch && userWords.length > 0) {
+                return true;
+            }
+        }
+
+        // 5. Distância de Levenshtein simplificada para respostas curtas
+        if (correctNormalized.length <= 20 && userNormalized.length <= 30) {
+            const similarity = this.calculateSimilarity(userNormalized, correctNormalized);
+            if (similarity >= 0.8) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * Calcula similaridade entre duas strings (simplificado)
+     */
+    calculateSimilarity(str1, str2) {
+        const longer = str1.length > str2.length ? str1 : str2;
+        const shorter = str1.length > str2.length ? str2 : str1;
+        
+        if (longer.length === 0) return 1.0;
+        
+        const editDistance = this.levenshteinDistance(longer, shorter);
+        return (longer.length - editDistance) / longer.length;
+    }
+
+    /**
+     * Calcula distância de Levenshtein
+     */
+    levenshteinDistance(str1, str2) {
+        const matrix = [];
+        
+        for (let i = 0; i <= str2.length; i++) {
+            matrix[i] = [i];
+        }
+        
+        for (let j = 0; j <= str1.length; j++) {
+            matrix[0][j] = j;
+        }
+        
+        for (let i = 1; i <= str2.length; i++) {
+            for (let j = 1; j <= str1.length; j++) {
+                if (str2.charAt(i - 1) === str1.charAt(j - 1)) {
+                    matrix[i][j] = matrix[i - 1][j - 1];
+                } else {
+                    matrix[i][j] = Math.min(
+                        matrix[i - 1][j - 1] + 1,
+                        matrix[i][j - 1] + 1,
+                        matrix[i - 1][j] + 1
+                    );
+                }
+            }
+        }
+        
+        return matrix[str2.length][str1.length];
+    }
+
+    /**
      * Avança para a próxima questão ou mostra resultado
      */
     nextQuestion() {
@@ -293,6 +519,7 @@ class CatequeseQuiz {
             this.currentQuestion++;
             this.selectedAnswer = null;
             this.isAnswered = false;
+            this.userTextAnswer = '';
             console.log('➡️ Avançando para questão', this.currentQuestion + 1);
             this.renderQuestion();
         } else {
