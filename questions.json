@@ -97,7 +97,7 @@
       "question": "Qual o nome do bispo diocesano de Anápolis?",
       "options": ["Dom João", "Dom Pedro", "Dom Giovane", "Dom Paulo"],
       "correctAnswer": 0,
-      "explanation": "Dom Giovane Pereira de Melo é o atual bispo da Diocese de Anápolis.",
+      "explanation": "Dom João  é o atual bispo da Diocese de Anápolis.",
       "category": "Igreja Local"
     },
 
@@ -106,7 +106,7 @@
       "question": "Qual o nome do coadjutor da nossa diocese?",
       "options": ["Dom Waldemar", "Dom Pedro", "Dom Giovane", "Dom Paulo"],
       "correctAnswer": 0,
-      "explanation": "O bispo coadjutor da Diocese de Anápolis é Dom Waldemar Passini Dalbello. :contentReference[oaicite:2]{index=2}",
+      "explanation": "O bispo coadjutor da Diocese de Anápolis é Dom Waldemar Passini Dalbello. :contentReference[oaicite:0]{index=0}",
       "category": "Igreja Local"
     },
 
