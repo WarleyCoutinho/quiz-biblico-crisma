@@ -1,0 +1,314 @@
+{
+  "quiz": {
+    "title": "Quiz de Catequese - Turma de Crismandos",
+    "subtitle": "Paróquia Santíssima Trindade - Anápolis",
+    "totalQuestions": 20,
+    "pointsPerQuestion": 5,
+    "maxScore": 100
+  },
+  "questions": [
+    {
+      "id": 1,
+      "question": "Quantos livros tem a Sagrada Escritura?",
+      "options": [
+        "66 livros",
+        "73 livros", 
+        "81 livros",
+        "72 livros"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A Bíblia Católica possui 73 livros: 46 do Antigo Testamento e 27 do Novo Testamento.",
+      "category": "Sagrada Escritura"
+    },
+    {
+      "id": 2,
+      "question": "Quais são as Pessoas da Santíssima Trindade?",
+      "options": [
+        "Pai, Filho e Maria",
+        "Deus, Jesus e José",
+        "Pai, Filho e Espírito Santo",
+        "Deus, Maria e Jesus"
+      ],
+      "correctAnswer": 2,
+      "explanation": "A Santíssima Trindade é formada pelo Pai, Filho e Espírito Santo - três pessoas distintas, mas um só Deus.",
+      "category": "Doutrina"
+    },
+    {
+      "id": 3,
+      "question": "O que pode prejudicar a graça de Deus em nós?",
+      "options": [
+        "O trabalho",
+        "O pecado",
+        "O cansaço",
+        "A alegria"
+      ],
+      "correctAnswer": 1,
+      "explanation": "O pecado é o que afasta nossa alma de Deus e prejudica a graça divina em nós.",
+      "category": "Vida Espiritual"
+    },
+    {
+      "id": 4,
+      "question": "Quais são os sacramentos de Cura?",
+      "options": [
+        "Batismo e Crisma",
+        "Confissão e Unção dos Enfermos",
+        "Eucaristia e Matrimônio",
+        "Ordem e Batismo"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Os sacramentos de cura são a Confissão (Penitência) e a Unção dos Enfermos.",
+      "category": "Sacramentos"
+    },
+    {
+      "id": 5,
+      "question": "Quais são as três condições para comungar bem?",
+      "options": [
+        "Estar em jejum, ter fé e estar limpo",
+        "Estar em graça, ter devoção e jejum eucarístico",
+        "Rezar, confessar e comungar",
+        "Estar batizado, ter fé e rezar"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Para comungar bem é preciso: estar em estado de graça (sem pecado mortal), ter devoção e estar em jejum eucarístico.",
+      "category": "Sacramentos"
+    },
+    {
+      "id": 6,
+      "question": "Qual é o atual Sumo Pontífice da Santa Igreja Católica?",
+      "options": [
+        "Papa Bento XVI",
+        "Papa João Paulo II",
+        "Papa Francisco",
+        "Papa Leão XIV"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Papa Francisco (Jorge Mario Bergoglio) é o atual Papa da Igreja Católica desde 2013.",
+      "category": "Igreja"
+    },
+    {
+      "id": 7,
+      "question": "Quais são os cinco mandamentos da Igreja?",
+      "options": [
+        "Orar, jejuar, comungar, confessar e ajudar",
+        "Participar da missa, confessar anualmente, comungar na Páscoa, jejuar e ajudar a Igreja",
+        "Amar a Deus, amar o próximo, rezar, jejuar e comungar",
+        "Batizar, crismar, casar, rezar e ofertar"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Os mandamentos da Igreja incluem: participar da missa nos domingos, confessar-se ao menos uma vez ao ano, comungar ao menos na Páscoa, jejuar quando mandado e contribuir para as necessidades da Igreja.",
+      "category": "Mandamentos"
+    },
+    {
+      "id": 8,
+      "question": "Quais são os dons do Espírito Santo?",
+      "options": [
+        "Fé, esperança, caridade, justiça, paz, amor e bondade",
+        "Sabedoria, entendimento, conselho, fortaleza, ciência, piedade e temor de Deus",
+        "Paz, amor, alegria, bondade, mansidão, fidelidade e domínio próprio",
+        "Humildade, caridade, paciência, fé, esperança, amor e perdão"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Os sete dons do Espírito Santo são: Sabedoria, Entendimento, Conselho, Fortaleza, Ciência, Piedade e Temor de Deus.",
+      "category": "Espírito Santo"
+    },
+    {
+      "id": 9,
+      "question": "Quem são os membros da Sagrada Família?",
+      "options": [
+        "Jesus, Maria e João",
+        "José, Maria e Jesus",
+        "Jesus, Maria e José de Arimateia",
+        "Joaquim, Ana e Maria"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A Sagrada Família é composta por São José, Nossa Senhora Maria e o Menino Jesus.",
+      "category": "História Sagrada"
+    },
+    {
+      "id": 10,
+      "question": "Quais foram os primeiros filhos de Adão e Eva?",
+      "options": [
+        "Caim e Abel",
+        "Jacó e Esaú",
+        "Isaac e Ismael",
+        "José e Benjamim"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Caim e Abel foram os primeiros filhos de Adão e Eva, conforme relatado no livro do Gênesis.",
+      "category": "História Sagrada"
+    },
+    {
+      "id": 11,
+      "question": "O que é a Eucaristia?",
+      "options": [
+        "Uma oração especial",
+        "O corpo e sangue de Cristo",
+        "Um símbolo religioso",
+        "Uma cerimônia sagrada"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A Eucaristia é verdadeiramente o Corpo, Sangue, Alma e Divindade de Nosso Senhor Jesus Cristo.",
+      "category": "Sacramentos"
+    },
+    {
+      "id": 12,
+      "question": "O que o sacramento do Batismo causa em nossa alma?",
+      "options": [
+        "Perdão dos pecados",
+        "Purificação e renascimento espiritual",
+        "Fortalecimento da fé",
+        "União com Cristo"
+      ],
+      "correctAnswer": 1,
+      "explanation": "O Batismo purifica a alma do pecado original, nos faz renascer espiritualmente e nos torna filhos de Deus.",
+      "category": "Sacramentos"
+    },
+    {
+      "id": 13,
+      "question": "O que é a Santa Missa?",
+      "options": [
+        "Uma reunião de fiéis",
+        "Uma oração em comunidade",
+        "A celebração do sacrifício e da ressurreição de Jesus Cristo",
+        "Um momento de reflexão"
+      ],
+      "correctAnswer": 2,
+      "explanation": "A Santa Missa é a renovação incruenta do sacrifício de Jesus Cristo na cruz e a celebração de sua ressurreição.",
+      "category": "Liturgia"
+    },
+    {
+      "id": 14,
+      "question": "Quais são as cinco notas características da Igreja?",
+      "options": [
+        "Una, santa, católica, apostólica e divina",
+        "Una, santa, carismática, apostólica e romana",
+        "Santa, divina, católica, apostólica e eterna",
+        "Una, santa, católica, apostólica e romana"
+      ],
+      "correctAnswer": 3,
+      "explanation": "As notas da Igreja são: Una, Santa, Católica, Apostólica e Romana.",
+      "category": "Igreja"
+    },
+    {
+      "id": 15,
+      "question": "Quantos anos durou o período conhecido como 'vida pública de Jesus'?",
+      "options": [
+        "1 ano",
+        "5 anos",
+        "3 anos",
+        "7 anos"
+      ],
+      "correctAnswer": 2,
+      "explanation": "A vida pública de Jesus durou aproximadamente 3 anos, dos 30 aos 33 anos de idade.",
+      "category": "Vida de Jesus"
+    },
+    {
+      "id": 16,
+      "question": "O que Jesus fez durante sua vida pública?",
+      "options": [
+        "Construiu templos",
+        "Batizou, curou, expulsou demônios e pregou",
+        "Escreveu livros sagrados",
+        "Organizou a Igreja"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Durante sua vida pública, Jesus batizou, curou enfermos, expulsou demônios e pregou o Reino de Deus.",
+      "category": "Vida de Jesus"
+    },
+    {
+      "id": 17,
+      "question": "Segundo Jesus, quais são os dois maiores mandamentos?",
+      "options": [
+        "Não matar e não roubar",
+        "Amar a Deus e amar o próximo",
+        "Rezar e jejuar",
+        "Obedecer e honrar"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Jesus ensinou que os dois maiores mandamentos são: amar a Deus sobre todas as coisas e amar o próximo como a si mesmo.",
+      "category": "Mandamentos"
+    },
+    {
+      "id": 18,
+      "question": "Quais são os estágios da Igreja Católica?",
+      "options": [
+        "Igreja militante, padecente e gloriosa",
+        "Igreja nascente, crescente e triunfante",
+        "Igreja terrena, purgatorial e celestial",
+        "Igreja triunfante, sofredora e peregrina"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A Igreja se divide em: militante (fiéis na terra), padecente (almas no purgatório) e gloriosa (santos no céu).",
+      "category": "Igreja"
+    },
+    {
+      "id": 19,
+      "question": "O que define cada estágio da Igreja?",
+      "options": [
+        "Os fiéis na terra, os que esperam no purgatório e os santos no céu",
+        "Os batizados, os crismados e os ordenados",
+        "Os leigos, os religiosos e o clero",
+        "Os catecúmenos, os fiéis e os santos"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Igreja militante são os fiéis que lutam na terra, padecente são as almas que se purificam no purgatório, e gloriosa são os santos que já estão no céu.",
+      "category": "Igreja"
+    },
+    {
+      "id": 20,
+      "question": "Qual o nome do bispo diocesano de Anápolis?",
+      "options": [
+        "Dom João",
+        "Dom Pedro",
+        "Dom Giovane",
+        "Dom Paulo"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Dom Giovane Pereira de Melo é o atual bispo da Diocese de Anápolis.",
+      "category": "Igreja Local"
+    }
+  ],
+  "categories": [
+    "Sagrada Escritura",
+    "Doutrina",
+    "Vida Espiritual",
+    "Sacramentos",
+    "Mandamentos",
+    "Espírito Santo",
+    "História Sagrada",
+    "Liturgia",
+    "Igreja",
+    "Vida de Jesus",
+    "Igreja Local"
+  ],
+  "scoreRanges": [
+    {
+      "min": 95,
+      "max": 100,
+      "message": "🎉 Perfeito! Você acertou todas!",
+      "level": "perfect",
+      "description": "Excelente conhecimento da doutrina católica!"
+    },
+    {
+      "min": 70,
+      "max": 94,
+      "message": "👏 Muito bem! Ótimo desempenho!",
+      "level": "excellent",
+      "description": "Você demonstra um bom conhecimento da fé católica."
+    },
+    {
+      "min": 50,
+      "max": 69,
+      "message": "📚 Bom trabalho! Continue estudando!",
+      "level": "good",
+      "description": "Continue se dedicando aos estudos da catequese."
+    },
+    {
+      "min": 0,
+      "max": 49,
+      "message": "💪 Não desista! Revise o conteúdo e tente novamente!",
+      "level": "needs-improvement",
+      "description": "Dedique mais tempo ao estudo da doutrina católica."
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Meta tags essenciais -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Quiz interativo de catequese para turma de crismandos da Paróquia Santíssima Trindade em Anápolis">
+    <meta name="keywords" content="catequese, quiz, religião, católica, crismandos, Anápolis">
+    <meta name="author" content="Paróquia Santíssima Trindade - Anápolis">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Quiz de Catequese - Turma de Crismandos">
+    <meta property="og:description" content="Teste seus conhecimentos sobre a doutrina católica com nosso quiz interativo">
+    <meta property="og:site_name" content="Paróquia Santíssima Trindade">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Quiz de Catequese - Turma de Crismandos">
+    <meta property="twitter:description" content="Teste seus conhecimentos sobre a doutrina católica com nosso quiz interativo">
+
+    <!-- Título da página -->
+    <title>Quiz de Catequese - Turma de Crismandos | Paróquia Santíssima Trindade</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+    
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="./styles.css">
+    
+    <!-- Preload de recursos críticos -->
+    <link rel="preload" href="./questions.json" as="fetch" crossorigin="anonymous">
+    <link rel="preload" href="./script.js" as="script">
+    
+    <!-- Theme color para PWA -->
+    <meta name="theme-color" content="#7c3aed">
+    <meta name="msapplication-TileColor" content="#7c3aed">
+    
+    <!-- Prevenção de zoom indesejado em dispositivos móveis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+
+<body>
+    <!-- Container principal da aplicação -->
+    <div id="app" role="main" aria-label="Quiz de Catequese">
+        <!-- Loading inicial -->
+        <div class="quiz-container fade-in">
+            <div class="quiz-card">
+                <div class="quiz-header">
+                    <div class="flex justify-between items-center mb-4">
+                        <h1 class="quiz-title">Quiz de Catequese</h1>
+                        <div class="quiz-score pulse">
+                            Carregando...
+                        </div>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill loading" style="width: 50%"></div>
+                        </div>
+                        <span class="progress-text">Preparando...</span>
+                    </div>
+                </div>
+
+                <div class="quiz-content">
+                    <h2 class="question-title">
+                        Carregando questões...
+                    </h2>
+                    
+                    <div class="text-center">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">📚</div>
+                        <p style="color: #6b7280; margin-bottom: 2rem;">
+                            Preparando seu quiz de catequese personalizado
+                        </p>
+                    </div>
+
+                    <div class="info-box">
+                        <p class="info-text">
+                            <strong>Aguarde:</strong> Carregando questões sobre a doutrina católica
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-footer">
+                Paróquia Santíssima Trindade - Anápolis
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./script.js" defer></script>
+    
+    <!-- Analytics (opcional - descomente se necessário) -->
+    <!-- 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    -->
+
+    <!-- Service Worker para PWA (opcional) -->
+    <script>
+        // Registra service worker se disponível
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(function(registration) {
+                        console.log('✅ Service Worker registrado:', registration.scope);
+                    })
+                    .catch(function(error) {
+                        console.log('❌ Falha no Service Worker:', error);
+                    });
+            });
+        }
+    </script>
+
+    <!-- Manifest para PWA (opcional) -->
+    <link rel="manifest" href="./manifest.json">
+    
+    <!-- Fallback para JavaScript desabilitado -->
+    <noscript>
+        <div style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1e3a8a 0%, #5b21b6 50%, #312e81 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        ">
+            <div style="
+                background: white;
+                color: #1f2937;
+                padding: 2rem;
+                border-radius: 1rem;
+                max-width: 400px;
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            ">
+                <h2 style="margin: 0 0 1rem 0; font-size: 1.5rem; font-weight: bold;">
+                    JavaScript Necessário
+                </h2>
+                <p style="margin: 0 0 1rem 0; line-height: 1.6;">
+                    Este quiz precisa do JavaScript habilitado para funcionar. 
+                    Por favor, habilite o JavaScript em seu navegador e recarregue a página.
+                </p>
+                <button onclick="location.reload()" style="
+                    background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
+                    color: white;
+                    border: none;
+                    padding: 0.75rem 1.5rem;
+                    border-radius: 0.5rem;
+                    font-weight: bold;
+                    cursor: pointer;
+                ">
+                    Tentar Novamente
+                </button>
+            </div>
+        </div>
+    </noscript>
+</body>
+</html>
