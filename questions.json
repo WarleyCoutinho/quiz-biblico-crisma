@@ -88,25 +88,35 @@
         "Papa Leão XIV"
       ],
       "correctAnswer": 3,
-      "explanation": "O Papa Leão XIV é o atual Papa da Igreja Católica desde 2013.",
+      "explanation": "O Papa Leão XIV é o atual Papa da Igreja Católica desde 2025.",
       "category": "Igreja"
     },
 
     {
       "id": 8,
       "question": "Qual o nome do bispo diocesano de Anápolis?",
-      "options": ["Dom João", "Dom Pedro", "Dom Giovane", "Dom Paulo"],
+      "options": [
+        "Dom João Wilk",
+        "Dom Pedro Brito Guimarães",
+        "Dom Giovane Pereira de Melo",
+        "Dom Paulo Mendes Peixoto"
+      ],
       "correctAnswer": 0,
-      "explanation": "Dom João  é o atual bispo da Diocese de Anápolis.",
+      "explanation": "Dom João Wilk é o atual bispo da Diocese de Anápolis desde 2019.",
       "category": "Igreja Local"
     },
 
     {
       "id": 9,
       "question": "Qual o nome do coadjutor da nossa diocese?",
-      "options": ["Dom Waldemar", "Dom Pedro", "Dom Giovane", "Dom Paulo"],
+      "options": [
+        "Dom Waldemar Passini Dalbello:",
+        "Dom Pedro",
+        "Dom Giovane",
+        "Dom Paulo"
+      ],
       "correctAnswer": 0,
-      "explanation": "Dom Waldemar e o atual coadjutor da Diocese de Anápolis",
+      "explanation": "Dom Waldemar Passini Dalbello: e o atual coadjutor da Diocese de Anápolis",
       "category": "Igreja Local"
     },
 
@@ -115,12 +125,12 @@
       "question": "Quais são os cinco mandamentos da Igreja?",
       "options": [
         "Ouvir missa inteira nos domingos e festas de guarda, confessar-se ao menos uma vez por ano, comungar ao menos pela Páscoa da Ressurreição, jejuar e abster-se de carne quando manda a Santa Mãe Igreja, e pagar o dízimo segundo o costume.",
-        "Participar da missa, confessar-se anualmente, comungar na Páscoa, jejuar e ajudar a Igreja.",
+        "Participar da missa nos domingos e dias santos de guarda, confessar-se ao menos uma vez por ano, comungar ao menos pela Páscoa da Ressurreição, jejuar e abster-se de carne quando a Igreja determina, e contribuir para as necessidades da Igreja.",
         "Amar a Deus, amar o próximo, rezar, jejuar e comungar.",
         "Batizar, crismar, casar, rezar e ofertar."
       ],
       "correctAnswer": 1,
-      "explanation": "Os cinco mandamentos da Igreja são: participar da missa nos domingos e dias santos, confessar-se ao menos uma vez por ano, comungar ao menos pela Páscoa da Ressurreição, jejuar e abster-se de carne quando a Igreja o determina, e contribuir para as necessidades da Igreja.",
+      "explanation": "Os cinco mandamentos da Igreja são: 1) Participar da missa nos domingos e dias santos de guarda; 2) Confessar-se ao menos uma vez por ano; 3) Comungar ao menos pela Páscoa da Ressurreição; 4) Jejuar e abster-se de carne quando a Igreja determina; 5) Contribuir para as necessidades da Igreja.",
       "category": "Mandamentos"
     },
 
@@ -129,12 +139,12 @@
       "question": "Quais são as três condições para comungar bem?",
       "options": [
         "Estar em jejum, ter fé e estar limpo.",
-        "Fazer ação de graças, ter fé na Eucaristia e jejum eucarístico.",
+        "Estar em estado de graça (sem pecado mortal), ter devoção e fé na Eucaristia, e estar em jejum eucarístico.",
         "Rezar, confessar e comungar.",
         "Estar batizado, ter fé e rezar."
       ],
       "correctAnswer": 1,
-      "explanation": "Para comungar bem é preciso: estar em estado de graça (sem pecado mortal), ter devoção e estar em jejum eucarístico.",
+      "explanation": "Para comungar bem é preciso: 1) Estar em estado de graça (sem pecado mortal); 2) Ter devoção e fé na Eucaristia; 3) Estar em jejum eucarístico (1 hora antes, exceto água e medicamentos).",
       "category": "Sacramentos"
     },
     {
@@ -184,12 +194,12 @@
       "question": "O que o sacramento do Batismo causa em nossa alma?",
       "options": [
         "Perdão dos pecados",
-        "Pureza da Alma",
+        "Apaga o pecado original, nos faz renascer espiritualmente e nos torna filhos de Deus",
         "Fortalecimento da fé",
         "União com Cristo"
       ],
       "correctAnswer": 1,
-      "explanation": "O Batismo purifica a alma do pecado original, nos faz renascer espiritualmente e nos torna filhos de Deus.",
+      "explanation": "O Batismo apaga o pecado original, perdoa todos os pecados pessoais (se houver), nos faz renascer espiritualmente, nos torna filhos de Deus e nos incorpora à Igreja.",
       "category": "Sacramentos"
     },
 
@@ -254,7 +264,7 @@
       "question": "Segundo Jesus, na Sagrada Escritura, quais são os dois maiores mandamentos?",
       "options": [
         "Não matar e não roubar.",
-        "Amar a Deus e amar o próximo seu irmão.",
+        "Amar a Deus sobre todas as coisas e amar o próximo como a si mesmo.",
         "Rezar e jejuar.",
         "Obedecer e honrar."
       ],
@@ -269,6 +279,7 @@
     "Vida Espiritual",
     "Sacramentos",
     "Mandamentos",
+    "Orações",
     "Espírito Santo",
     "História Sagrada",
     "Liturgia",
