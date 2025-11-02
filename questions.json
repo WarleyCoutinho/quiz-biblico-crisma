@@ -87,7 +87,7 @@
         "Papa Francisco",
         "Papa Leão XIV"
       ],
-      "correctAnswer": 2,
+      "correctAnswer": 3,
       "explanation": "Papa Francisco (Jorge Mario Bergoglio) é o atual Papa da Igreja Católica desde 2013.",
       "category": "Igreja"
     },
@@ -96,7 +96,7 @@
       "id": 8,
       "question": "Qual o nome do bispo diocesano de Anápolis?",
       "options": ["Dom João", "Dom Pedro", "Dom Giovane", "Dom Paulo"],
-      "correctAnswer": 2,
+      "correctAnswer": 0,
       "explanation": "Dom Giovane Pereira de Melo é o atual bispo da Diocese de Anápolis.",
       "category": "Igreja Local"
     },
