@@ -84,10 +84,10 @@
       "options": [
         "Papa Bento XVI",
         "Papa João Paulo II",
-        "Papa Francisco",
-        "Papa Leão XIV"
+        "Papa Leão XIV",
+        "Papa Francisco"
       ],
-      "correctAnswer": 3,
+      "correctAnswer": 2,
       "explanation": "O Papa Leão XIV é o atual Papa da Igreja Católica desde 2025.",
       "category": "Igreja"
     },
@@ -110,12 +110,12 @@
       "id": 9,
       "question": "Qual o nome do coadjutor da nossa diocese?",
       "options": [
-        "Dom Waldemar Passini Dalbello",
-        "Dom Pedro",
         "Dom Giovane",
+        "Dom Pedro",
+        "Dom Waldemar Passini Dalbello",
         "Dom Paulo"
       ],
-      "correctAnswer": 0,
+      "correctAnswer": 2,
       "explanation": "Dom Waldemar Passini Dalbello e o atual coadjutor da Diocese de Anápolis",
       "category": "Igreja Local"
     },
