@@ -110,13 +110,13 @@
       "id": 9,
       "question": "Qual o nome do coadjutor da nossa diocese?",
       "options": [
-        "Dom Waldemar Passini Dalbello:",
+        "Dom Waldemar Passini Dalbello",
         "Dom Pedro",
         "Dom Giovane",
         "Dom Paulo"
       ],
       "correctAnswer": 0,
-      "explanation": "Dom Waldemar Passini Dalbello: e o atual coadjutor da Diocese de Anápolis",
+      "explanation": "Dom Waldemar Passini Dalbello e o atual coadjutor da Diocese de Anápolis",
       "category": "Igreja Local"
     },
 
