@@ -84,10 +84,10 @@
       "options": [
         "Papa Bento XVI",
         "Papa João Paulo II",
-        "Papa Francisco",
-        "Papa Leão XIV"
+        "Papa Leão XIV",
+        "Papa Francisco"
       ],
-      "correctAnswer": 3,
+      "correctAnswer": 2,
       "explanation": "O Papa Leão XIV é o atual Papa da Igreja Católica desde 2025.",
       "category": "Igreja"
     },
@@ -96,12 +96,12 @@
       "id": 8,
       "question": "Qual o nome do bispo diocesano de Anápolis?",
       "options": [
-        "Dom João Wilk",
-        "Dom Pedro Brito Guimarães",
         "Dom Giovane Pereira de Melo",
+        "Dom Pedro Brito Guimarães",
+        "Dom João Wilk",
         "Dom Paulo Mendes Peixoto"
       ],
-      "correctAnswer": 0,
+      "correctAnswer": 2,
       "explanation": "Dom João Wilk é o atual bispo da Diocese de Anápolis desde 2019.",
       "category": "Igreja Local"
     },
